@@ -27,7 +27,7 @@ $table.bootstrapTable({
                   { title: 'title', field: 'title'}  
                 ] 
   }); 
-  $table.on('treetable-expand.bs.table', function(self,name,row) {
+  $table.on('treetable-expand.bs.table', function(self,field,row) {
 	$.getJSON(url,function(data){
 		$table.bootstrapTable('addTreeNode', {row: data.rows}); 
 	})
