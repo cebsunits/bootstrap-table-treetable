@@ -3,7 +3,7 @@
 
 #Usage
 ```html
-<script src="src/bootstrap-table-treetable .js"></script>
+<script src="src/bootstrap-table-treetable.js"></script>
 ```
 
 #Options
@@ -20,19 +20,19 @@ var $table=$('.table');
 $table.bootstrapTable({ 
       url: 'your url', 
       pagination : true,
-			sidePagination : "server",
+      sidePagination : "server",
       columns: [ 
-                { field: '_state', checkbox: true}, 
-                { title: 'root', field: 'id',  expanded:true}, 
-                { title: 'title', field: 'title'}  
+      		  { field: '_state', checkbox: true}, 
+                  { title: 'root', field: 'id',  expanded:true}, 
+                  { title: 'title', field: 'title'}  
                ] 
   }); 
 
 $table.on('treetable-expand.bs.table', 
     function(self,name,row) {
-			  $.getJSON(url,function(data){
-					  $table.bootstrapTable('addTreeNode', {row: data.rows}); 
-			  })
-	});
+	$.getJSON(url,function(data){
+	$table.bootstrapTable('addTreeNode', {row: data.rows}); 
+	})
+    });
 
 ```
